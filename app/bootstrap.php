@@ -1,4 +1,9 @@
 <?php
-require_once 'libs/Core.php';
-require_once 'libs/Controller.php';
-require_once 'libs/Database.php';
+//Load config file
+require_once 'config/config.php';
+
+//Autoloader
+spl_autoload_register(function ($className)
+{
+    require_once 'libs/'.$className.'.php';
+});
